@@ -27,3 +27,8 @@ Route::middleware('auth')
         Route::get('/home', 'HomeController@index')->name('home'); 
     });
 
+
+//Parte front Office
+Route::get("{any?}", function() {
+    return view('guest.home');
+})->where('any', '.*');
